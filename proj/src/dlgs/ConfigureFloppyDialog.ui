@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConfigureFloppyDialog</class>
+ <widget class="QDialog" name="ConfigureFloppyDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>166</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Configure floppy</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblFloppyFda">
+     <property name="text">
+      <string>Floppy (fda):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="txtFloppyFda">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QToolButton" name="btnChooseFloppyFda">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../../res/resource.qrc">
+       <normaloff>:/images/file-open_container_folder.png</normaloff>:/images/file-open_container_folder.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QToolButton" name="btnRemoveFloppyFda">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../../res/resource.qrc">
+       <normaloff>:/images/edit-delete.png</normaloff>:/images/edit-delete.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblFloppyFdb">
+     <property name="text">
+      <string>Floppy (fdb):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLineEdit" name="txtFloppyFdb">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QToolButton" name="btnChooseFloppyFdb">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../../res/resource.qrc">
+       <normaloff>:/images/file-open_container_folder.png</normaloff>:/images/file-open_container_folder.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QToolButton" name="btnRemoveFloppyFdb">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../../res/resource.qrc">
+       <normaloff>:/images/edit-delete.png</normaloff>:/images/edit-delete.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>175</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnOk">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>txtFloppyFda</tabstop>
+  <tabstop>btnChooseFloppyFda</tabstop>
+  <tabstop>btnRemoveFloppyFda</tabstop>
+  <tabstop>txtFloppyFdb</tabstop>
+  <tabstop>btnChooseFloppyFdb</tabstop>
+  <tabstop>btnRemoveFloppyFdb</tabstop>
+  <tabstop>btnOk</tabstop>
+  <tabstop>btnCancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../res/resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnOk</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigureFloppyDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>241</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigureFloppyDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnChooseFloppyFda</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigureFloppyDialog</receiver>
+   <slot>slotChooseFloppy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>441</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnChooseFloppyFdb</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigureFloppyDialog</receiver>
+   <slot>slotChooseFloppy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>441</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRemoveFloppyFda</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigureFloppyDialog</receiver>
+   <slot>slotRemoveFloppy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>475</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRemoveFloppyFdb</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigureFloppyDialog</receiver>
+   <slot>slotRemoveFloppy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>475</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotChooseFloppy()</slot>
+  <slot>slotRemoveFloppy()</slot>
+ </slots>
+</ui>

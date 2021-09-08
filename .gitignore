@@ -1,0 +1,8 @@
+.idea
+.vscode
+
+/bin/**/*
+/bin/translations
+/proj/QemuFrontend.pro.*
+/build-*
+*.bat

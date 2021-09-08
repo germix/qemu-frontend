@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>511</width>
+    <height>361</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::CustomContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTreeView" name="treeView">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="font">
+       <font>
+        <family>Courier</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>511</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionFileNew"/>
+    <addaction name="actionFileOpen"/>
+    <addaction name="actionFileSave"/>
+    <addaction name="actionFileSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionFileClose"/>
+    <addaction name="separator"/>
+    <addaction name="actionFileOpenContainerFolder"/>
+    <addaction name="separator"/>
+    <addaction name="actionFileExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionHelpAbout"/>
+   </widget>
+   <widget class="QMenu" name="menu_Options">
+    <property name="title">
+     <string>&amp;Options</string>
+    </property>
+    <widget class="QMenu" name="menu_Languages">
+     <property name="title">
+      <string>&amp;Languages</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../res/resource.qrc">
+       <normaloff>:/images/menu-languages.png</normaloff>:/images/menu-languages.png</iconset>
+     </property>
+    </widget>
+    <addaction name="menu_Languages"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Options"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionFileNew"/>
+   <addaction name="actionFileOpen"/>
+   <addaction name="actionFileSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionFileClose"/>
+   <addaction name="separator"/>
+   <addaction name="actionFileOpenContainerFolder"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionFileExit">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/file-exit.png</normaloff>:/images/file-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+  </action>
+  <action name="actionHelpAbout">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/help-about.png</normaloff>:/images/help-about.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionFileNew">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/file-new.png</normaloff>:/images/file-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+  </action>
+  <action name="actionFileOpen">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/file-open.png</normaloff>:/images/file-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+  </action>
+  <action name="actionFileSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/file-save.png</normaloff>:/images/file-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionFileSaveAs">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/file-save_as.png</normaloff>:/images/file-save_as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save &amp;as</string>
+   </property>
+  </action>
+  <action name="actionFileClose">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/file-close.png</normaloff>:/images/file-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="actionFileOpenContainerFolder">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/file-open_container_folder.png</normaloff>:/images/file-open_container_folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open container folder</string>
+   </property>
+  </action>
+  <action name="actionEmulate">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/qemu.png</normaloff>:/images/items/qemu.png</iconset>
+   </property>
+   <property name="text">
+    <string>Emulate</string>
+   </property>
+  </action>
+  <action name="actionConfigureMachine">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureMemory">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureDisplay">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureAudio">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureMouse">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureKeyboard">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureTablet">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureNetworkInterface">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionAddNetworkInterface">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/interface-add.png</normaloff>:/images/items/interface-add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add interface</string>
+   </property>
+  </action>
+  <action name="actionRemoveNetworkInterface">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/interface-remove.png</normaloff>:/images/items/interface-remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove interface</string>
+   </property>
+  </action>
+  <action name="actionConfigureCdrom">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureFloppy">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionConfigureParallel">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/config.png</normaloff>:/images/items/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configure</string>
+   </property>
+  </action>
+  <action name="actionAddMachine">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/machine-add.png</normaloff>:/images/items/machine-add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add machine</string>
+   </property>
+  </action>
+  <action name="actionRemoveMachine">
+   <property name="icon">
+    <iconset resource="../res/resource.qrc">
+     <normaloff>:/images/items/machine-remove.png</normaloff>:/images/items/machine-remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove machine</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../res/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
